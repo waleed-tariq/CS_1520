@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>loginForm!</title>
+		<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+	</head>
+	<body>
+		<h1> Online Budget Calculator </h1>
+		<h3>Categories:</h3>
+		<table id="categories">
+		</table>
+		<br>
+		<form id="addCat">
+			<strong>Name:</strong><input type="text" name="catName" id="catName" />
+			<br>
+			<strong>Budget:</strong><input type="text" name="budget" id="budget">
+			<br>
+			<strong>Amount Spent:</strong><input type="text" name="amt_spent" id="amt_spent">
+			<input type="button" id="catButton" value="submit">
+		</form>
+		<br>
+		<h3>Purchases:</h3>
+		<table id="purchases">
+		</table>
+		<br>
+		<form id="addPurch">
+			<strong>Category (if none above, type in "Uncategorized"):</strong><input type="text" name="purchCat" id="purchCat" />
+			<br>
+			<strong>Name:</strong><input type="text" name="purchName" id="purchName" />
+			<br>
+			<strong>Amount:</strong><input type="text" name="purchAmt" id="purchAmt" />
+			<br>
+			<strong>Date:</strong><input type="date" name="purchDate" id="purchDate" value="2021-04-24" min="2020-04-24" max="2021-12-31">
+			<input type="button" id="purchButton" value="submit">
+		</form>
+	</body>
+</html>
+
