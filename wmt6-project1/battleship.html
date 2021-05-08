@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Battleship</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles.css" />
+	<script src="bShip.js"></script>
+</head>
+<body>
+	<div id="startScreen" style="display:inline-block;">
+		<h1>Battleship</h1>
+		
+		<form id="form1">
+			<h3>Player 1</h3>
+			<label>Name:</label><br>
+			<input id="name1"><br>
+			<label>Ship Position:</label><br>
+			<input id="shipString1"><br>
+		</form><br>
+		<input type="button" id="p2Entry" value="Player 2 Ship Placement">
+	</div>
+	<div id="startScreen2" style="display:none;">
+		<form id="form2">
+			<h3>Player 2</h3>
+			<label>Name:</label><br>
+			<input id="name2"><br>
+			<label>Ship Positions:</label><br>
+			<input id="shipString2"><br>
+		</form>
+		<br>
+		<input type="button" id="startGame" value="Begin Game!">
+	</div>
+		
+	
+
+	<div id="middleScreen" style="display:none">
+		<h3 id="turnName"></h3>
+		<input type="button" id="playerTurn" value="Begin Turn">
+	</div>
+
+	<div id="overlay" style="display:none">
+			<h2 id="overlayText"></h2>
+			<input type="button" id="buttonforWait" value="Go to waiting screen">
+		</div>
+
+	<div id="largeCont" class="container">
+		<div id="header" class="top" style="display:none"></div>
+		<div id="header2" class="top" style="display:none"></div>
+		<div id="player1Board" class="p1BoardLeft" style="display:none"> 
+		</div>
+
+		<div id="enemy1Board" class="p1BoardRight" style="display:none"></div>
+		<div id="player2Board" class="p2BoardLeft" style="display:none">
+			<h2 id="p2Name"></h2>
+		</div>
+		<div id="enemy2Board" class="p2BoardRight" style="display:none"></div>
+	</div>
+
+	<div id="scores" style="display:none">
+		<h1>High Scores:</h1>
+		<ol id="theList">
+		</ol>
+	</div>
+
+
+</body>
+</html>
