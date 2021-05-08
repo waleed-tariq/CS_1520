@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}loginForm!{% endblock %}</title>
+	</head>
+	<body>
+		{% if username %}
+			Logged in as {{ username }}, <a href="{{ url_for("unlogger") }}">click here to logout</a>
+			<br />
+			<br />
+		{% else %}
+			<h2> Welcome to Catering Online </h2>
+			<h3><a href="{{ url_for("login") }}"> Click here to Login</a></h3>
+			<h3><a href="{{ url_for("register") }}"> Click here to Register</a></h3>
+			<h3><a href="{{ url_for("loginStaff") }}"> Click here to Login as a Staff Member</a></h3>
+		{% endif %}
+		{% block body %}
+		{% endblock %}
+	</body>
+</html>

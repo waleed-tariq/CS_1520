@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Your profile! - {{ super() }}{% endblock %}
+
+{% block body %} <h3> Your Scheduled Events </h3>
+	
+	<ul class="eventList">
+		
+	{% for message in userNm.events %}
+		<li><strong>{{ message.eventName }} </strong> on <strong> {{ message.eventDate }} </strong></li>
+	{% else %}
+		<li><em>You have not signed up for any events.</em></li>
+	{% endfor %}
+	</ul>	
+
+	<h3>List of all available events</h3>
+	<ul class="eventList">
+	{% for p in per %}
+		{% for message in p.events %}
+		
+			{% if userNm not in message.staffs %}
+				
+				
+				{% if message.staffs|length < 3 %}
+					<li>
+					<strong> {{ message.eventName }} </strong> on <strong> {{ message.eventDate }} </strong> Staff Members Signed Up: {{ message.staffs }} &emsp;
+					<a href="{{ url_for("addEvent",username=session["usernameStaff"],eventID=message.event_id) }}"> click to add event</a>
+				</li>
+				{% else %}		
+
+				{% endif %}
+			{% endif %}
+			
+		{% else %}
+			{% if p.username == "owner" %}
+		{% else %}
+		<li><em>There are no events for {{ p.username }}.</em></li>
+		{% endif %}
+			<br>
+		{% endfor %}
+	{% endfor %}
+	</ul>
+	
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Admin profile! - {{ super() }}{% endblock %}
+
+{% block body %} 
+		<br/>
+		<h3><a href="{{ url_for("registerStaff",username=session["username"]) }}"> Click here to Register New Staff</a></h3>
+
+
+	<br/>
+	<h3> Events Scheduled: </h3>
+	<ul class="eventList">
+	{% for p in per %}
+	{% for message in p.events %}
+		<li>
+		<strong> {{ message.eventName }} </strong> on <strong> {{ message.eventDate }} : </strong>
+		{% if message.staffs %} 
+			Staff Signed Up -> {{ message.staffs }}
+		{% else %}
+			<strong><em>No staff signed up</em></strong>
+		{% endif %}</li>
+	{% else %}
+		{% if p.username == "owner" and per|length > 1 %}
+		{% else %}
+		<li><strong>There are no events scheduled with {{ p.username }}.</strong></li>
+		{% endif %}
+	{% endfor %}
+	{% endfor %}
+	</ul>
+	
+{% endblock %}

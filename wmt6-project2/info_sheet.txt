@@ -1,0 +1,57 @@
+========================================
+CS/COE 1520 Assignment Information Sheet
+----------------------------------------
+
+You must submit an information sheet with every assignment. Also be sure
+to submit all materials following the procedures described on the
+submission procedures page.
+
+Name: Waleed Tariq  
+
+Lecture section: 1010
+
+Recitation day and time: Tuesday 11:10am  
+
+Assignment #: 2
+
+Program due date: 03/25/2021  
+
+Handed in date: 03/25/2021 
+
+Source code file name(s): catering.py
+
+
+
+
+
+
+
+Other file name(s) (if relevant):
+templates/adminProfile.html
+templates/base.html
+templates/curProfile.html
+templates/loginPage.html
+templates/loginPageStaff.html
+templates/register.html
+templates/registerStaff.html
+templates/staffProfile.html
+
+Does your project run without error?:
+Yes
+If not, what is/are the error(s) and which parts of your program run
+correctly?:
+
+
+
+
+
+
+
+Additional comments to the grader:
+
+
+
+
+
+
+

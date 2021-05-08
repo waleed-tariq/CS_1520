@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Sign Up Staff - {{ super() }}{% endblock %}
+{% block body %}
+  <h2>Sign Up</h2>
+  {% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+  <form action="" method="post">
+    <dl>
+      <dt>Username:
+      <dd><input type="text" name="usernameStaff" size="30" value="{{ request.form.usernameStaff }}">
+      <dt>Password:
+      <dd><input type="password" name="passwordStaff" size="30">
+      <dt>Password <small>(repeat)</small>:
+      <dd><input type="password" name="password2Staff" size="30">
+    </dl>
+    <div class="actions"><input type="submit" value="Sign Up"></div>
+  </form>
+{% endblock %}

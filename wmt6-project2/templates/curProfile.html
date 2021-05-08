@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Your profile! - {{ super() }}{% endblock %}
+
+{% block body %}
+	
+	{% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+	<form action="" method="post">
+	    <dl>
+	    	<h3>New Event Entry Form:</h3>
+	      <dt>Event Name:
+	      <dd><input type="text" name="eventName" size="30" value="{{ request.form.eventName }}">
+	      <dt><label for="start">Event Date:</label>
+	      <dd><input type="date" name="eventDate" value="2021-03-20" min="2021-03-20" max="2021-12-31">
+	    </dl>
+	    <div class="actions"><input type="submit" value="Sign Up"></div>
+	  </form>
+	<br/>
+	<h3>Your Events:</h3>
+	<ul class="eventList">
+	{% for message in messages %}
+		<li><strong>{{ message.eventName }} </strong> on <strong>{{ message.eventDate }}  &emsp; <a href="{{ url_for("deleteEvent",eID=message.event_id,username=session["username"]) }}"> click here to remove event
+		</a></strong></li>
+	{% else %}
+		<li><em>You have not created any events yet.</em></li>
+	{% endfor %}
+	</ul>
+	
+{% endblock %}
