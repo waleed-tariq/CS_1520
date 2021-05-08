@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Your profile! - {{ super() }}{% endblock %}
+
+{% block body %}
+	
+	{% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+	<form action="" method="post">
+	    <dl>
+	    	<h3>New Chat Room Creation Form:</h3>
+	      <dt>Room Name:
+	      <dd><input type="text" name="roomName" size="30" value="{{ request.form.roomName }}">
+	    </dl>
+	    <div class="actions"><input type="submit" value="Sign Up"></div>
+	  </form>
+	<br/>
+	<h3>Your Rooms:</h3>
+	<ul class="eventList">
+	{% for room in rooms %}
+		<li><strong>{{ room.roomName }} </strong> &emsp; <a href="{{ url_for('deleteRoom',rID=room.room_id,username=session['username']) }}"> click here to delete room
+		</a></strong></li>
+	{% else %}
+		<li><em>You have not created any chat rooms yet.</em></li>
+	{% endfor %}
+	</ul>
+
+	<h3> All Rooms: </h3>
+	<ul class="RoomList">
+	{% for room in allRooms %}
+		<li>
+		<strong> {{ room.roomName }} </strong> &emsp; <a href="{{ url_for('chatRoom',username=session['username'],roomName=room.roomName) }}"> click here to enter room</a>
+		{% else %}
+		<li><strong>There are no chat rooms available.</strong></li>
+	{% endfor %}
+	</ul>
+	
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chat Room</title>
+		<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+	</head>
+
+<body>
+	Logged in as {{ username }}, <a href="{{ url_for('unlogger') }}">click here to logout</a>
+	
+	<h3> Messages: </h3>
+	<table id="roomMessage">
+		<tr>{% for m in messages %}
+			<td>{{ m.message }}</td></tr>
+			{% else %}
+			<tr><td><strong>There are no messages in this chat room.</strong></td></tr>
+			{% endfor %}
+	</table>
+
+	<form name="theForm">
+		<input type="text" id="a" name="a" value="" />
+		<input type="button" id="theButton" value="Send Message" />
+	</form>
+	<br>
+	<a href="{{ url_for('profile',username=username) }}">click here to leave room</a>
+</body>
+</html>
